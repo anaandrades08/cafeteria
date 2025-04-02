@@ -1,0 +1,311 @@
+/*CSS global*/
+:root {
+  /*backougronds*/
+  --background-black: #000;
+  --background-dark: #333;
+  --background-grey: #555;
+  --background-white: #ffffff;
+  --background-ligth: #f8f9fa;
+  --background-orange: #fd7e14;
+  --background-orange-ligth: #fea867;
+  --bg-hover: #333;
+  /*textos*/
+  --text-white: #fff;
+  --text-orange: #fd7e14;
+  --text-dark: #333;
+  --text-black: #000;
+  /*border*/
+  --border-light: #ccc;
+  /*trocar cor do focus bootstrap*/
+  --bs-focus-ring-color: rgba(255, 165, 0, 0.25);
+}
+
+body {
+  background-color: var(--background-ligth);
+  font-family: "Poppins", sans-serif;
+}
+/*HEADER*/
+.nav-item a {
+  color: var(--text-white);
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.nav-item a:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--text-orange);
+  border-radius: 8px;
+}
+
+/*MAIN*/
+.about,
+.produtos {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.about-text {
+  padding: 20px;
+  background-color: var(--background-white);
+}
+.d-none {
+  display: none;
+}
+.banner {
+  background-image: url("https://raw.githubusercontent.com/anaandrades08/cafeteria/main/images/banner-cafe-1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-dark);
+}
+.banner h2 {
+  color: var(--text-black);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.banner p {
+  color: var(--text-dark);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.btn-primary {
+  background-color: var(--background-dark);
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+}
+.btn-primary:hover {
+  background-color: var(--background-orange);
+}
+/*produtos*/
+.card-img-top {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 20px;
+  background-color: var(--background-white);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-body:hover {
+  border-color: var(--background-orange);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.btn-success {
+  background-color: var(--background-dark);
+  border: none;
+}
+.btn-success:hover {
+  background-color: var(--background-orange);
+}
+
+/*ambiente*/
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.grid-image {
+  max-width: 100%;
+  cursor: pointer; /* Indica que a imagem é clicável */
+  border-radius: 10px;
+}
+
+.modal {
+  display: none; /* Oculta por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+.modal:active {
+  display: block;
+}
+#modalImage {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/*contato*/
+.form-contact {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--background-white);
+}
+
+.form-contact input,
+.form-contact textarea {
+  border: 1px solid var(--text-orange);
+}
+.btn-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-contact button {
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--background-dark);
+  border: none;
+  float: right;
+  margin: 1px;
+  width: auto;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+}
+.btn-contact button:hover {
+  background-color: var(--background-orange);
+}
+
+/*FOOTER*/
+.footer-link a {
+  color: var(--text-white);
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid transparent;
+}
+.footer-link a:hover,
+.politica-link a:hover {
+  color: var(--text-orange);
+}
+.politica-link a {
+  color: var(--text-white);
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+
+/*Focus*/
+.nav-item a:focus,
+.footer-link a:focus,
+.politica-link a:focus {
+  background-color: var(--bg-hover);
+  border-color: var(--text-orange);
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 0 0 4px var(--bs-focus-ring-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-contact button:focus,
+.btn-primary:focus,
+.btn-success:focus {
+  background-color: var(--background-orange);
+  border-color: var(--text-orange);
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 0 0 4px var(--bs-focus-ring-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-contact input:focus,
+.form-contact textarea:focus {
+  background-color: var(--bs-focus-ring-color);
+  border-color: var(--text-orange);
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 0 0 4px var(--bs-focus-ring-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+img:focus {
+  outline: 3px solid var(--text-orange);
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px var(--bs-focus-ring-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ajustes para telas menores que 768px */
+@media (max-width: 768px) {
+  .lead {
+    font-size: 1rem;
+  }
+
+  .about,
+  .form-contact {
+    width: 100%;
+  }
+  .banner {
+    height: 300px;
+    background-size: contain;
+    padding: 20px;
+  }
+
+  .banner h2 {
+    font-size: 2rem;
+  }
+
+  .banner p {
+    color: var(--text-black);
+    font-size: 1.5rem;
+  }
+  .btn-primary {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    border-radius: 0.2rem;
+  }
+  .btn-contact {
+    display: block;
+  }
+  .btn-contact button {
+    width: 100%;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    padding: 5px;
+  }
+}
+
+/* Ajustes para telas menores que 480px */
+@media (max-width: 480px) {
+  .banner {
+    height: 200px;
+    background-size: contain;
+    background-position: top;
+  }
+
+  .banner h2 {
+    font-size: 1.5rem;
+  }
+
+  .banner p {
+    font-size: 0.9rem;
+  }
+
+  .banner a {
+    font-size: 0.8rem;
+    padding: 8px 12px; /* Reduz o botão */
+  }
+}
